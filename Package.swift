@@ -11,9 +11,6 @@ let package = Package(
         .macOS(.v10_10)
     ],
     products: [
-        .library(name: "LokaliseWrapper", targets: ["Lokalise"]),
-    ],
-    targets: [
         .binaryTarget(
                     name: "Lokalise",
                     path: "Lokalise.framework",
@@ -22,6 +19,7 @@ let package = Package(
                             .linkedLibrary("z")
                           ]
                 )
+    ]
         // .target(
         //     name: "Lokalise",
         //     path: "Lokalise.framework",
