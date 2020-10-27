@@ -14,16 +14,20 @@ let package = Package(
         .library(name: "Lokalise", targets: ["Lokalise"]),
     ],
     targets: [
-        .target(
-            name: "Lokalise",
-            path: "Lokalise.framework",
-            exclude: [ "Info.plist"
-            ],
-            resources: [
-                .process("Lokalise"),
-                .process("Info.plist"),
-                .process("strip-frameworks.sh")
-            ],
-            publicHeadersPath: "Lokalise.framework/Headers")
+        .binaryTarget(
+                    name: "Lokalise",
+                    path: "Lokalise.framework"
+                )
+        // .target(
+        //     name: "Lokalise",
+        //     path: "Lokalise.framework",
+        //     exclude: [ "Info.plist"
+        //     ],
+        //     resources: [
+        //         .process("Lokalise"),
+        //         .process("Info.plist"),
+        //         .process("strip-frameworks.sh")
+        //     ],
+        //     publicHeadersPath: "Lokalise.framework/Headers")
     ]
 )
