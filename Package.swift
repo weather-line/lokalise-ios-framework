@@ -16,7 +16,8 @@ let package = Package(
     targets: [
         .binaryTarget(
                     name: "Lokalise",
-                    path: "Lokalise.framework"
+                    path: "Lokalise.framework",
+                    dependencies: ["libz", "libc++"])
                 )
         // .target(
         //     name: "Lokalise",
