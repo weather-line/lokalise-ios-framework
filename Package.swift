@@ -11,13 +11,16 @@ let package = Package(
         .macOS(.v10_10)
     ],
     products: [
-        .library(name: "Lokalise", targets: ["Lokalise"]),
+        .library(name: "LokaliseWrapper", targets: ["Lokalise"]),
     ],
     targets: [
         .binaryTarget(
                     name: "Lokalise",
                     path: "Lokalise.framework",
-                    dependencies: ["libz", "libc++"])
+                    linkerSettings: [
+                            .linkedLibrary("c++"),
+                            .linkedLibrary("z")
+                          ]
                 )
         // .target(
         //     name: "Lokalise",
